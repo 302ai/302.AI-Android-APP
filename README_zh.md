@@ -11,6 +11,13 @@
 
 <p align="center"><a href="https://github.com/302ai/302.AI-Android-APP/tree/main/Ai302/app/release" target="blank"><img src="https://file.302.ai/gpt/imgs/20250725/f79719888cf74f9c935432b7f882af93.jpg" width="20%"/></a></p >
 
+<div align="center">
+
+[![官网](https://img.shields.io/badge/官网-302.ai-blue.svg)](https://302.ai)
+[![GitHub](https://img.shields.io/badge/GitHub-302.AI--Android--APP-black.svg)](https://github.com/302ai/302.AI-Android-APP)
+[![邮件](https://img.shields.io/badge/邮件-support@302.ai-red.svg)](mailto:support@302.ai)
+
+</div>
 
 <p align="center"><a href="README_zh.md">中文</a> | <a href="README.md">English</a> | <a href="README_ja.md">日本語</a></p>
 
@@ -102,19 +109,6 @@ open Chat302AI.xcodeproj
 - **联网搜索**: 获取实时信息
 - **深度搜索**: 更全面的信息检索
 - **推理模式**: R1思维链推理
-
-## 💬 联系我们
-
-<div align="center">
-
-[![官网](https://img.shields.io/badge/官网-302.ai-blue.svg)](https://302.ai)
-[![GitHub](https://img.shields.io/badge/GitHub-302.AI--Android--APP-black.svg)](https://github.com/302ai/302.AI-Android-APP)
-[![邮件](https://img.shields.io/badge/邮件-support@302.ai-red.svg)](mailto:support@302.ai)
-
-**遇到问题？** 请在 [GitHub Issues](https://github.com/302ai/302.AI-Android-APP/issues) 中反馈
-
-</div>
-
 
 ## 📄 许可证
 
