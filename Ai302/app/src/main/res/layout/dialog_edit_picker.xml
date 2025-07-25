@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/shape_select_site_bg_write_line"
+    android:elevation="8dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请在下方编辑标题"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingBottom="12dp"
+        android:gravity="center" />
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="150dp">
+
+       <LinearLayout
+           android:id="@+id/editTitleLine"
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           android:layout_marginTop="10dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_marginBottom="18dp"
+           android:background="@drawable/shape_select_site_bg_gray_line"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toRightOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent">
+           <EditText
+               android:id="@+id/edit_title"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="请填写自定义标题"
+               android:textSize="12sp"
+               android:background="@null"
+               android:focusable="true"
+               android:gravity="center_vertical"
+               android:paddingTop="5dp"
+               android:paddingBottom="5dp"
+               android:paddingRight="5dp"
+               android:layout_marginLeft="8dp"
+               android:layout_gravity="center"/>
+       </LinearLayout>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginTop="12dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/lineButton"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" >
+
+        <Button
+            android:id="@+id/cancelEditButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:background="?attr/selectableItemBackground"
+            android:padding="12dp"
+            android:layout_weight="1"
+            android:textColor="#333333"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/saveEditButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="保存"
+            android:background="?attr/selectableItemBackground"
+            android:padding="12dp"
+            android:layout_weight="1"
+            android:textColor="#333333"
+            android:layout_marginTop="8dp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>

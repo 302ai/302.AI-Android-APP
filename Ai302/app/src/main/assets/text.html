@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="sendData()">点击发送数据</button>
+<script>
+    function sendData() {
+      const data = "测试数据";
+      console.log('JS: 发送数据', data);
+      window.postMessage({ from: "auth", data: data }, "*"); // 直接调用 window
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SlideSwitchView">
+        <attr name="backgroundColor" format="color" />
+        <attr name="slideColor" format="color" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textNormalColor" format="color" />
+        <attr name="textActiveColor" format="color" />
+    </declare-styleable>
+</resources>

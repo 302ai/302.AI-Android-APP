@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/shape_select_site_bg_write_line"
+    android:elevation="8dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请选择图片上传方式"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingBottom="12dp"
+        android:gravity="center" />
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="150dp">
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/guideline"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           app:layout_constraintGuide_percent="0.5"/>
+       <LinearLayout
+           android:id="@+id/CameraLine"
+           android:layout_width="80dp"
+           android:layout_height="40dp"
+           android:layout_marginRight="15dp"
+           android:background="@drawable/shape_chat_site_bg_gray_line1"
+           android:orientation="horizontal"
+           app:layout_constraintRight_toLeftOf="@+id/guideline"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent">
+           <ImageView
+               android:layout_width="20dp"
+               android:layout_height="20dp"
+               android:layout_gravity="center"
+               android:layout_marginLeft="15dp"
+               android:background="@drawable/icon_camera"/>
+           <TextView
+               android:layout_gravity="center"
+               android:layout_marginLeft="3dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="相机"/>
+
+       </LinearLayout>
+
+       <LinearLayout
+           android:id="@+id/PictureLine"
+           android:layout_width="80dp"
+           android:layout_height="40dp"
+           android:orientation="horizontal"
+           android:background="@drawable/shape_chat_site_bg_gray_line1"
+           app:layout_constraintLeft_toRightOf="@+id/guideline"
+           app:layout_constraintTop_toTopOf="parent"
+           android:layout_marginLeft="15dp"
+           app:layout_constraintBottom_toBottomOf="parent">
+           <ImageView
+               android:layout_width="20dp"
+               android:layout_height="20dp"
+               android:layout_marginLeft="15dp"
+               android:layout_gravity="center"
+               android:background="@drawable/icon_picture"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:layout_marginLeft="3dp"
+               android:text="相册"/>
+       </LinearLayout>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取消"
+        android:background="?attr/selectableItemBackground"
+        android:padding="12dp"
+        android:textColor="#333333"
+        android:layout_marginTop="8dp" />
+</LinearLayout>

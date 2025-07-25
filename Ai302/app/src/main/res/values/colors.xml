@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="backWhite">#F9F9F9</color>
+    <color name="BgPrimary">#F7F8F9</color>
+    <color name="BgChat">#f5f5f5</color>
+    <color name="dividing_line">#E5E6E8</color> <!--分割线-->
+    <color name="preference_simple_menu_background">#FFFDFDFD</color>
+    <color name="shadow">#D3D3D3</color><!--阴影-->
+    <color name="gray">#FF666666</color>
+    <color name="green">#00FF00</color>
+    <color name="blue">#4169E1</color>
+    <color name="delete_red">#FD5972</color>
+    <color name="delete_red1">#FD5912</color>
+
+    <color name="莫兰迪灰褐色">#B6B5A7</color>
+    <color name="莫兰迪灰米色">#E8E3DE</color>
+    <color name="莫兰迪灰蓝色">#3498db</color>
+    <color name="莫兰迪深棕色">#9A8F8F</color>
+
+
+    <color name="color1">#f3ecfd</color>
+    <color name="color2">#f7f1eb</color>
+    <color name="color3">#d3ecf6</color>
+    <color name="color4">#fef1e0</color>
+    <color name="color5">#e8dfdb</color>
+    <color name="color6">#daedf8</color>
+    <color name="color7">#f7e7eb</color>
+
+    <color name="colorSelect">#DFDFDF</color>
+    <color name="colorUnselect">#F5F5F5</color>
+
+    <color name="colorPurple">#871F78</color>
+    <color name="colorLightPurple">#DB70DB</color>
+    <color name="color302AI">#8e47f0</color>
+
+
+</resources>

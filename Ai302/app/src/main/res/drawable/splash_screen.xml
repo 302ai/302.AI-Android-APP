@@ -1,0 +1,11 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 背景颜色 -->
+    <item android:drawable="@android:color/white" />
+
+    <!-- 居中显示应用图标 -->
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/logo_start" />
+    </item>
+</layer-list>

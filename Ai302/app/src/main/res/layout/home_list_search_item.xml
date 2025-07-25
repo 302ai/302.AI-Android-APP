@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mcxtzhang.swipemenulib.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/content_search_layout"
+        android:layout_width="match_parent"
+        android:background="@drawable/shape_unselect_site_bg_gray_home_line"
+        android:layout_height="100dp"
+        >
+
+        <TextView
+            android:id="@+id/titleSearchTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="新的聊天"
+            android:maxLines="1"
+            android:maxWidth="300dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/textSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="哈哈"
+            android:maxHeight="30dp"
+            android:textSize="13sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleSearchTv"/>
+        <TextView
+            android:id="@+id/textSearch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="哈哈你是谁？"
+            android:visibility="gone"
+            android:maxHeight="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleSearchTv"/>
+        <TextView
+            android:id="@+id/messageSearchNumberTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="12sp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/gray"
+            android:layout_marginTop="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textSearch"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="messages found"
+            android:textColor="@color/gray"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toRightOf="@+id/messageSearchNumberTv"
+            app:layout_constraintTop_toBottomOf="@+id/textSearch"/>
+
+        <TextView
+            android:id="@+id/homeTimeSearchTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2025/3/21"
+            android:layout_marginRight="10dp"
+            android:textSize="12sp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/mBtnDelete"-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@color/delete_red"-->
+<!--        android:text="删除"-->
+<!--        android:textColor="@android:color/white"/>-->
+
+    <LinearLayout
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mBtnDelete"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:background="@drawable/shape_select_site_bg_red_line"
+            android:text="删除"
+            android:textColor="@android:color/white"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mBtnEdit"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:background="@drawable/shape_select_site_bg_purple_line"
+            android:text="编辑"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+</com.mcxtzhang.swipemenulib.SwipeMenuLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomSwitch" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <!-- 滑块（thumb）颜色 -->
+        <item name="colorControlActivated">#8e47f0</item>
+        <!-- 轨道（track）颜色 -->
+        <item name="colorSwitchThumbNormal">#BDBDBD</item>
+        <!-- 轨道在选中状态下的颜色 -->
+        <item name="android:trackTint">#d2b5f9</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+</resources>

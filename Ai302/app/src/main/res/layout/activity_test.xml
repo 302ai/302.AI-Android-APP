@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/gray"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.TestActivity">
+
+    <ImageView
+        android:id="@+id/imageTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <WebView
+        android:id="@+id/webTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageTest"/>
+    <Button
+        android:id="@+id/buttonTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/webTest"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="显示图片"
+        app:layout_constraintRight_toRightOf="parent"/>
+    <Button
+        android:id="@+id/buttonUpLoadImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/webTest"
+        app:layout_constraintLeft_toRightOf="@+id/buttonTest"
+        android:text="上传图片"
+        android:layout_marginLeft="15dp"/>
+
+    <WebView
+        android:id="@+id/webViewTest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@+id/buttonTest"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <!-- 加载等待动画（示例用 ProgressBar） -->
+    <LinearLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/webViewTest"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:indeterminate="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="加载中..."
+            android:textColor="@android:color/darker_gray"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/markDownTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="显示Markdown文本"
+        app:layout_constraintTop_toBottomOf="@+id/loadingLayout"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <com.ai302.app.view.ThreeCircularLoadingAnim
+        android:id="@+id/loadThreeView"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/markDownTv"/>
+    <Button
+        android:id="@+id/stopView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止动画"
+        app:layout_constraintTop_toBottomOf="@+id/loadThreeView"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <Button
+        android:id="@+id/playUrlAudio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放url音频内容"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/loadThreeView"
+        app:layout_constraintLeft_toRightOf="@+id/stopView"/>
+
+    <Button
+        android:id="@+id/recordAudio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始录制"
+        app:layout_constraintTop_toBottomOf="@+id/stopView"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <Button
+        android:id="@+id/stopRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止录制"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/stopView"
+        app:layout_constraintLeft_toRightOf="@+id/recordAudio"/>
+
+    <Button
+        android:id="@+id/playTTS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="本地语音TTS"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/stopView"
+        app:layout_constraintLeft_toRightOf="@+id/stopRecord"/>
+
+
+
+    <Button
+        android:id="@+id/playAudio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放录音"
+        app:layout_constraintTop_toBottomOf="@+id/recordAudio"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <Button
+        android:id="@+id/stopAudio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止播放"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/recordAudio"
+        app:layout_constraintLeft_toRightOf="@+id/playAudio"/>
+
+    <WebView
+        android:id="@+id/lookWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playAudio"/>
+
+    <com.ai302.app.view.SlideSwitchView
+        android:id="@+id/slideView"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lookWeb"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

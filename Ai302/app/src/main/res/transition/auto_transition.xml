@@ -1,0 +1,8 @@
+<!-- res/transition/auto_transition.xml -->
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="300">
+
+    <!-- 淡入淡出动画 -->
+    <fade android:fadingMode="fade_in_out" />
+
+</transitionSet>
