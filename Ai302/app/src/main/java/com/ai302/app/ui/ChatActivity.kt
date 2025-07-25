@@ -242,6 +242,7 @@ class ChatActivity : AppCompatActivity(),OnWordPrintOverClickListener,OnSettingD
     private var mDialog:SettingDialog?=null
 
     private var chatId = 0
+    private var isResume = false
 
 
 
@@ -1686,10 +1687,15 @@ class ChatActivity : AppCompatActivity(),OnWordPrintOverClickListener,OnSettingD
                         binding.root.requestLayout() // 强制更新布局
                     }
                     modelSearchList.clear()
-                    setupPopupWindow(modelList)
+                    if (isResume){
+                        setupPopupWindow(modelList)
+                        showPopup(binding.editSearchModel)
+                    }
+                }
+                if (isResume){
                     showPopup(binding.editSearchModel)
                 }
-                showPopup(binding.editSearchModel)
+
                 //modelSearchList.clear()
             }
         })
@@ -1720,6 +1726,7 @@ class ChatActivity : AppCompatActivity(),OnWordPrintOverClickListener,OnSettingD
     @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
     override fun onResume() {
         super.onResume()
+        isResume = true
         Log.e("ceshi","onResume$isNetWorkThink,,$isDeepThink")
         if (isDeepThink){
             binding.deepImage.setImageResource(R.drawable.icon_thinking3)
@@ -2107,7 +2114,7 @@ class ChatActivity : AppCompatActivity(),OnWordPrintOverClickListener,OnSettingD
     }
 
     private fun setupPopupWindow(modelList: MutableList<String>) {
-        val popupView = LayoutInflater.from(this).inflate(R.layout.popup_list, null)
+        val popupView = LayoutInflater.from(this@ChatActivity).inflate(R.layout.popup_list, null)
         popupWindow = PopupWindow(
             popupView,
             LinearLayout.LayoutParams.WRAP_CONTENT,
@@ -2194,6 +2201,7 @@ class ChatActivity : AppCompatActivity(),OnWordPrintOverClickListener,OnSettingD
 
     override fun onStop() {
         super.onStop()
+        isResume = false
         Log.e("ceshi","onStop标题是：$chatType")
         if (chatType == ""){
             chatType = "新的聊天"
@@ -2223,6 +2231,7 @@ class ChatActivity : AppCompatActivity(),OnWordPrintOverClickListener,OnSettingD
 
         }
 
+        popupWindow.dismiss()
 
         //messageList.clear()
     }
