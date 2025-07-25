@@ -17,6 +17,7 @@ import com.ai302.app.http.AudioToTextRequest
 import com.ai302.app.http.ChatCompletionLlamaRequest
 import com.ai302.app.http.ChatCompletionRequest
 import com.ai302.app.http.ChatCompletionRequest1
+import com.ai302.app.http.ChatCompletionRequest2
 import com.ai302.app.http.ChatRequestImage
 import com.ai302.app.http.ContentImage
 import com.ai302.app.http.ImageUrl
@@ -68,6 +69,7 @@ class ChatViewModel :ViewModel(){
 
     private var contentList = mutableListOf<ContentImage>()
     private var contentMessagesList = mutableListOf<RequestMessage>()
+    private var contentMessagesList1 = mutableListOf<MessageImage>()
 
 
     @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
@@ -605,24 +607,134 @@ class ChatViewModel :ViewModel(){
             }else if (imageUrlServiceResultList.size == 1){
 
             }*/
+            /*if (isClearContext){
+                contentList.add(ContentImage(type = "text", text = question))
+                for (imageResult in imageUrlServiceResultList){
+                    contentList.add(ContentImage(type = "image_url", text = question ,image_url = ImageUrl(url = imageResult)))
+                }
+            }else{
+                // 从索引1开始遍历（跳过第一个元素）
+                for (i in 1 until messagesList.size) {
+                    val content = messagesList[i]
+                    if (content.contains("file:///android_asset/loading.html") || content.contains("这是删除过的内容变为空白")) {
+                        continue // 跳过该元素
+                    }
+                    val role = if (i % 2 == 0) "assistant" else "user"
+                    contentList.add(ContentImage(type = "role", text = content))
+                }
+                for (imageResult in imageUrlServiceResultList){
+                    contentList.add(ContentImage(type = "image_url", text = question ,image_url = ImageUrl(url = imageResult)))
+                }
+            }*/
+            if (isPrompt){
+                val separator = "&&&"
+                val parts = question.split(separator, limit = 2)
+                if (parts.size == 2) {
+                    firstPart = parts[0]
+                    secondPart = parts[1]
+                    println("第一部分: $firstPart")
+                    println("第二部分: $secondPart")
 
-            contentList.add(ContentImage(type = "text", text = question))
-            for (imageResult in imageUrlServiceResultList){
-                contentList.add(ContentImage(type = "image_url", text = question ,image_url = ImageUrl(url = imageResult)))
+                }
+                contentMessagesList1.add(MessageImage(role="system",  content = listOf(ContentImage(type = "text", text = firstPart))))
+
+                if (isClearContext){
+                    for (imageResult in imageUrlServiceResultList){
+                        contentMessagesList1.add(MessageImage(role = "user", content = listOf( ContentImage(type = "image_url", text = secondPart ,image_url = ImageUrl(url = imageResult))  )))
+                    }
+
+                }else{
+                    // 从索引1开始遍历（跳过第一个元素）
+                    for (i in 1 until messagesList.size) {
+                        val content = messagesList[i]
+                        if (content.contains("file:///android_asset/loading.html") || content.contains("这是删除过的内容变为空白")) {
+                            continue // 跳过该元素
+                        }
+                        val role = if (i % 2 == 0) "assistant" else "user"
+                        contentMessagesList1.add(MessageImage(role=role,  content = listOf(ContentImage(type = "text", text = content))))
+                    }
+                    Log.e("ceshi","图片有几张：${imageUrlServiceResultList.size}")
+                    for (imageResult in imageUrlServiceResultList){
+                        contentMessagesList1.add(MessageImage(role = "user", content = listOf( ContentImage(type = "image_url", text = secondPart ,image_url = ImageUrl(url = imageResult))  )))
+                    }
+
+                }
+
+            }else{
+                if (isClearContext){
+                    for (imageResult in imageUrlServiceResultList){
+                        contentMessagesList1.add(MessageImage(role = "user", content = listOf( ContentImage(type = "image_url", text = question ,image_url = ImageUrl(url = imageResult))  )))
+                    }
+
+                }else{
+                    // 从索引1开始遍历（跳过第一个元素）
+                    for (i in 1 until messagesList.size) {
+                        val content = messagesList[i]
+                        if (content.contains("file:///android_asset/loading.html") || content.contains("这是删除过的内容变为空白")) {
+                            continue // 跳过该元素
+                        }
+                        val role = if (i % 2 == 0) "assistant" else "user"
+                        contentMessagesList1.add(MessageImage(role=role,  content = listOf(ContentImage(type = "text", text = content))))
+                    }
+                    Log.e("ceshi","图片有几张：${imageUrlServiceResultList.size}")
+                    for (imageResult in imageUrlServiceResultList){
+                        contentMessagesList1.add(MessageImage(role = "user", content = listOf( ContentImage(type = "image_url", text = question ,image_url = ImageUrl(url = imageResult))  )))
+                    }
+
+                }
             }
 
 
-            request = ChatRequestImage(
-                messages = listOf(
-                    MessageImage(
-                        role = "user",
-                        content = contentList
-                    )
-                ),
-                model = "$mModelType",
-                ocr_model = "gpt-4o-mini",
-                stream = true
-            )
+
+            if (isDeepThink) {
+                when {
+                    isNetWorkThink -> {
+                        request = ChatCompletionRequest2(
+                            messages = contentMessagesList1,
+                            model = "$mModelType-r1-fusion",
+                            stream = true,
+                            `web-search` = true,
+                            userid = ""
+
+                        )
+                    }
+                    else -> {
+                        request = ChatCompletionRequest2(
+                            messages = contentMessagesList1,
+                            model = "$mModelType-r1-fusion",
+                            stream = true,
+                            `web-search` = false,
+                            userid = ""
+                        )
+                    }
+                }
+            } else {
+                when {
+                    isNetWorkThink -> {
+                        request = ChatCompletionRequest2(
+                            messages = contentMessagesList1,
+                            model = "$mModelType-web-search",
+                            stream = true,
+                            `web-search` = true,
+                            userid = ""
+
+                        )
+                    }
+                    else -> {
+                        request = ChatCompletionRequest2(
+                            messages = contentMessagesList1,
+                            model = "$mModelType",
+                            stream = true,
+                            `web-search` = false,
+                            userid = ""
+
+                        )
+                    }
+                }
+            }
+
+
+
         }
 
         if (isClearContext){
@@ -1001,6 +1113,7 @@ class ChatViewModel :ViewModel(){
                         }
                         mContent.clear()
                         mDeepThinkAssistantMessage.clear()
+                        contentMessagesList1.clear()
                     }
                 }
             )

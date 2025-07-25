@@ -162,6 +162,7 @@ class ChatActivity : AppCompatActivity(),OnWordPrintOverClickListener,OnSettingD
     private var imageUrlLocalList = CopyOnWriteArrayList<String>()
     private var imageUrlServiceResult = ""
     private var imageUrlServiceResultList = mutableListOf<String>()//CopyOnWriteArrayList
+    private var imageUrlServiceResultList1 = mutableListOf<String>()//CopyOnWriteArrayList
 
     private var mImageUrlLocalList = mutableListOf<String>()
     private var mImageUrlServiceResultList = mutableListOf<String>()
@@ -1481,7 +1482,7 @@ class ChatActivity : AppCompatActivity(),OnWordPrintOverClickListener,OnSettingD
                         if (false){//serviceProvider=="自定义"
                             chatViewModel.sendQuestion1(getChatTitle(messageList[1]),modelType,isNetWorkThink,isDeepThink,this@ChatActivity,userId,imageUrlServiceResult,false,apiKey,extractSwitch,apiService)
                         }else{
-                            chatViewModel.sendQuestion(getChatTitle(messageList[1]),modelType,isNetWorkThink,isDeepThink,this@ChatActivity,userId,imageUrlServiceResultList,false,apiKey,extractSwitch,apiService,true,messageList,serviceProvider)
+                            chatViewModel.sendQuestion(getChatTitle(messageList[1]),modelType,isNetWorkThink,isDeepThink,this@ChatActivity,userId,imageUrlServiceResultList1,false,apiKey,extractSwitch,apiService,true,messageList,serviceProvider)
                         }
 
                     }

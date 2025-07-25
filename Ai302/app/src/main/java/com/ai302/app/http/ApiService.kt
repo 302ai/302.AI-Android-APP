@@ -210,6 +210,15 @@ data class ChatCompletionRequest(
     val stream: Boolean = false
 )
 
+data class ChatCompletionRequest2(
+    val model: String = "gpt-3.5-turbo-web-search",
+
+    val `web-search`: Boolean = false,
+    val messages: List<MessageImage>,
+    val userid: String = "",
+    val stream: Boolean = false
+)
+
 data class ChatCompletionRequest1(
     val model: String = "gpt-3.5-turbo-web-search",
     val messages: List<RequestMessage1>,
