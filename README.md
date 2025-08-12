@@ -9,7 +9,7 @@
 <em>302.AI is a powerful AI intelligent chat application that opens up a new conversational experience for you. We have brought together mainstream top AI models including Deepseek, Qwen, Kimi K2 and more, allowing you to enjoy cutting-edge AI technology in one place.</em>
 </p>
 
-<p align="center"><a href="https://github.com/302ai/302.AI-Android-APP/tree/main/Ai302/app/release" target="blank"><img src="https://file.302.ai/gpt/imgs/20250725/f79719888cf74f9c935432b7f882af93.jpg" width="20%"/></a></p >
+<p align="center"><a href="https://github.com/302ai/302.AI-Android-APP/releases" target="blank"><img src="https://file.302.ai/gpt/imgs/20250725/f79719888cf74f9c935432b7f882af93.jpg" width="20%"/></a></p >
 
 <div align="center">
 
